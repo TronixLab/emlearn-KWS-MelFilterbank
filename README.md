@@ -51,11 +51,11 @@ The notebook and exported artifacts are aligned around a compact speech feature 
 - **Model window:** 1 second
 - **Window slicing:** 4 slices per model window in the exported Edge Impulse artifact
 
-The file [`/home/runner/work/emlearn-KWS-MelFilterbank/emlearn-KWS-MelFilterbank/mel_filterbank.h`](./mel_filterbank.h) contains the exported sparse mel filterbank lookup tables used to compress FFT bins into mel features suitable for embedded inference.
+The file [`mel_filterbank.h`](./mel_filterbank.h) contains the exported sparse mel filterbank lookup tables used to compress FFT bins into mel features suitable for embedded inference.
 
 ### Training workflow
 
-The notebook [`/home/runner/work/emlearn-KWS-MelFilterbank/emlearn-KWS-MelFilterbank/KWS_training.ipynb`](./KWS_training.ipynb) walks through the end-to-end method:
+The notebook [`KWS_training.ipynb`](./KWS_training.ipynb) walks through the end-to-end method:
 
 1. Load audio archives from a local `dataset/` directory
 2. Build a labeled dataset for `jarvis`, `negative`, and `noise`
@@ -95,21 +95,21 @@ The repository targets the **Arduino Nano 33 BLE Sense**, which is a good fit fo
 
 ## Firmware artifacts
 
-Two firmware delivery paths are included:
+Three firmware delivery paths are included:
 
 ### 1. Direct binary in the repository
 
 Prebuilt binary:
 
-- [`/home/runner/work/emlearn-KWS-MelFilterbank/emlearn-KWS-MelFilterbank/arduino.mbed_nano.nano33ble/nano_ble33_sense_microphone_continuous.ino.bin`](./arduino.mbed_nano.nano33ble/nano_ble33_sense_microphone_continuous.ino.bin)
+- [`arduino.mbed_nano.nano33ble/nano_ble33_sense_microphone_continuous.ino.bin`](./arduino.mbed_nano.nano33ble/nano_ble33_sense_microphone_continuous.ino.bin)
 
 Supporting note:
 
-- [`/home/runner/work/emlearn-KWS-MelFilterbank/emlearn-KWS-MelFilterbank/arduino.mbed_nano.nano33ble/README.txt`](./arduino.mbed_nano.nano33ble/README.txt)
+- [`arduino.mbed_nano.nano33ble/README.txt`](./arduino.mbed_nano.nano33ble/README.txt)
 
 ### 2. Zipped firmware package
 
-The archive [`/home/runner/work/emlearn-KWS-MelFilterbank/emlearn-KWS-MelFilterbank/arduino-nano-33-ble-sense-ei-firmware.zip`](./arduino-nano-33-ble-sense-ei-firmware.zip) contains:
+The archive [`arduino-nano-33-ble-sense-ei-firmware.zip`](./arduino-nano-33-ble-sense-ei-firmware.zip) contains:
 
 - `arduino-nano-33-ble-sense.ino.bin`
 - `flash_linux.sh`
@@ -118,7 +118,7 @@ The archive [`/home/runner/work/emlearn-KWS-MelFilterbank/emlearn-KWS-MelFilterb
 
 ### 3. Full exported inference SDK
 
-The archive [`/home/runner/work/emlearn-KWS-MelFilterbank/emlearn-KWS-MelFilterbank/ei-ched-husay-kws-demo-arduino-1.0.3-impulse-#1.zip`](./ei-ched-husay-kws-demo-arduino-1.0.3-impulse-#1.zip) contains the generated Edge Impulse inference library, including metadata showing:
+The archive [`ei-ched-husay-kws-demo-arduino-1.0.3-impulse-#1.zip`](./ei-ched-husay-kws-demo-arduino-1.0.3-impulse-#1.zip) contains the generated Edge Impulse inference library, including metadata showing:
 
 - **16000 raw audio samples per model window**
 - **3960 neural-network input features**
@@ -237,7 +237,7 @@ arduino-cli upload \
 Example on Windows from the included notes:
 
 ```bash
-arduino-cli upload -p COM6 --fqbn arduino:mbed_nano:nano33ble -i .\arduino.mbed_nano.nano33ble\nano_ble33_sense_microphone_continuous.ino.bin
+arduino-cli upload -p COM6 --fqbn arduino:mbed_nano:nano33ble -i ./arduino.mbed_nano.nano33ble/nano_ble33_sense_microphone_continuous.ino.bin
 ```
 
 ### Option B: use the zipped firmware package
