@@ -74,6 +74,8 @@ The current notebook references:
 - **3 classes**
 - **flattened feature size of 3960 per example**
 
+The exact class balance depends on the contents of the `dataset/*.zip` archives used when the notebook is executed.
+
 ### Model shape
 
 The notebook trains a compact fully connected classifier with:
