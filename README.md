@@ -5,23 +5,23 @@ TinyML keyword spotting for **Jarvis-style wake-word detection** on the **Arduin
 The project combines:
 
 - **Mel filterbank feature extraction** for speech audio
-- **Small neural network training** in Python/Jupyter
+- **Small neural network training** in Python
 - **Embedded deployment** for real-time inference on an nRF52840-based Arduino board
 - **Prebuilt firmware artifacts** that can be flashed with the Arduino CLI
 
 ## What is in this repository
 
 ```text
-KWS_training.ipynb                                 End-to-end training and experimentation notebook
-mel_filterbank.h                                   Exported sparse mel filterbank coefficients
-arduino.mbed_nano.nano33ble/                       Prebuilt Arduino Nano 33 BLE Sense firmware
-arduino-nano-33-ble-sense-ei-firmware.zip          Firmware bundle with helper flash scripts
-ei-ched-husay-kws-demo-arduino-1.0.3-impulse-#1.zip Edge Impulse exported inference library
+KWS_training.ipynb                                  # End-to-end training and experimentation notebook
+mel_filterbank.h                                    # Exported sparse mel filterbank coefficients
+arduino.mbed_nano.nano33ble/                        # Prebuilt Arduino Nano 33 BLE Sense firmware
+arduino-nano-33-ble-sense-ei-firmware.zip           # Firmware bundle with helper flash scripts
+ei-ched-husay-kws-demo-arduino-1.0.3-impulse-#1.zip # Edge Impulse exported inference library
 ```
 
 ## Project goal
 
-The repository demonstrates a **keyword spotting (KWS)** pipeline for always-on audio detection with TinyML constraints. Instead of full speech transcription, the model focuses on deciding whether a short audio window contains the target wake word or not.
+The repository demonstrates a **keyword spotting (KWS)** pipeline for always-on audio detection with TinyML constraints. Instead of full speech transcription, the model focuses on determining whether a short audio window contains the target wake word.
 
 In practice, the classification setup in this repository is organized around three classes:
 
