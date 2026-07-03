@@ -49,7 +49,6 @@ The notebook and exported artifacts are aligned around a compact speech feature 
 - **Frame length:** 20 ms
 - **Frame stride:** 10 ms
 - **Model window:** 1 second
-- **Window slicing:** 4 slices per model window in the exported Edge Impulse artifact
 
 The file [`mel_filterbank.h`](./mel_filterbank.h) contains the exported sparse mel filterbank lookup tables used to compress FFT bins into mel features suitable for embedded inference.
 
