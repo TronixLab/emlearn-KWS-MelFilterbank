@@ -1,13 +1,13 @@
 # emlearn-KWS-MelFilterbank
 
-TinyML keyword spotting for **Jarvis-style wake-word detection** on the **Arduino Nano 33 BLE Sense**. This repository documents a workflow for building a compact audio classifier that can react to phrases centered on **"Jarvis"**, including examples such as **"Jarvis"**, **"Hey Jarvis"**, and **"Hello Jarvis"**.
+TinyML keyword spotting for **Jarvis-style wake-word detection** on the **Arduino Nano 33 BLE Sense**. This repository documents a workflow for building a compact audio classifier that responds to phrases centered on **"Jarvis"**, including **"Jarvis"**, **"Hey Jarvis"**, and **"Hello Jarvis"**.
 
 The project combines:
 
 - **Mel filterbank feature extraction** for speech audio
 - **Small neural network training** in Python
 - **Embedded deployment** for real-time inference on an nRF52840-based Arduino board
-- **Prebuilt firmware artifacts** that can be flashed with the Arduino CLI
+- **Prebuilt firmware .bin file** that can be flashed with the Arduino CLI
 
 ## What is in this repository
 
@@ -150,12 +150,12 @@ If you want to understand how the model is built:
 
 This is the best starting point if you want to:
 
-- adapt the project to a different wake word
-- expand the negative-word set
-- tune feature extraction parameters
-- retrain the model before redeploying
+- Adapt the project to a different wake word
+- Expand the negative-word set
+- Tune feature extraction parameters
+- Retrain the model before redeploying
 
-## Tutorial part 2: install Arduino CLI
+## Tutorial Part 2: Install Arduino CLI
 
 The easiest way to flash the included firmware is with the **Arduino CLI**.
 
